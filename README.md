@@ -41,15 +41,15 @@ The Splunk Add-on for Microsoft Sysmon is a highly-rated application built by Sp
 *https://splunkbase.splunk.com/app/1914/*
 
 ## Instructions
-1. Ensure access to the Splunk web console (Default: http://(Splunk IP):8000)  
+1. Ensure access to the Splunk web console *(Default: http://(Splunk IP):8000)*  
   * If web console is inaccessible, validate appropriate firewall configuration. Splunk defaults:
     * TCP/8000
     * TCP/9997
 2. Login to Splunk web console and set up config to receive data.  
-  * If Splunk **is not** configured to receive data remotely:  
+  * If Splunk **is not** configured to receive data from a remote source:  
     * Settings > Forwarding and receiving > + Add new under Configure receiving  
     * Default port is 9997 > Save  
-  * If Splunk **is** configured to receive data remotely:  
+  * If Splunk **is** configured to receive data from a remote source:  
     * Take note of receiving port by reviewing Forwarding and receiving under Settings  
 3. Create index for Sysmon  
   * Settings > Indexes > New Index  
@@ -85,6 +85,8 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 ```
 index=sysmon
 ```
+12. Chop up the data and create visualizations for effective and efficient analysis.
 
-*Note: If your organization pays for a Splunk Enterprise license, you may be eligible to request a 50GB/day developer license. This provides for a much larger playing field than the free license limitation of 500MB/day. Ensure your company email address is on your Splunk.com account when requesting a developer license here: https://www.splunk.com/en_us/resources/personalized-dev-test-licenses.html  
+*Note: If your organization pays for a Splunk Enterprise license, you may be eligible to request a 50GB/day developer license. This provides for a much larger playing field than the free license limitation of 500MB/day. Ensure your company email address is on your Splunk.com account when requesting a developer license here:   https://www.splunk.com/en_us/resources/personalized-dev-test-licenses.html*
 
+**Updates with Sysmon queries and dashboards to come.**
