@@ -36,17 +36,6 @@ Splunk is a powerful data analytic tool that allows for the parsing and visualiz
 Splunk utilizes its own Universal Forwarder to send data to the Splunk indexer. In this case, the data sent from our endpoints to the Splunk server will be our Sysmon event logs.  
 *https://www.splunk.com/en_us/download/universal-forwarder.html*
 
-***C:\Program Files\SplunkUniversalForwarder\etc\system\local\inputs.conf***
-```
-[default]
-host = <Computer Name>
-
-[WinEventLog://Microsoft-Windows-Sysmon/Operational]
-disabled = false
-renderXml = true
-index = sysmon
-source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-```
 ### Splunk Add-on for Microsoft Sysmon
 The Splunk Add-on for Microsoft Sysmon is a highly-rated application built by Splunk Works in an effort to provide a data input and CIM-compliant field extractions for Microsoft Sysmon. Essentially, this add-on will take the unstructured chunk of data that makes up each log and chop it up into structured fields and values.  
 *https://splunkbase.splunk.com/app/1914/*
@@ -77,12 +66,25 @@ sysmon.exe -accepteula -i sysmonconfig-export.xml
   * Start > Event Viewer *(eventvwr.msc)*  
   * Application and Service Logs > Microsoft > Windows > Sysmon > Operational  
 9. Install the Splunk Universal Forwarder *(https://www.splunk.com/en_us/download/universal-forwarder.html)*
+  * Update `inputs.conf` file with the code below at the following file location:  
+***C:\Program Files\SplunkUniversalForwarder\etc\system\local\inputs.conf***
+```
+[default]
+host = <Computer Name> #CHANGE ME
+
+[WinEventLog://Microsoft-Windows-Sysmon/Operational]
+disabled = false
+renderXml = true
+index = sysmon
+source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
+```
+10. Restart SplunkForwarder Service
+  * Start > Services *(services.msc)*
+  * PowerShell: Restart-Service SplunkForwarder  
+11. Check Splunk `sysmon` index for ingested data
+```
+index=sysmon
+```
+
 *Note: If your organization pays for a Splunk Enterprise license, you may be eligible to request a 50GB/day developer license. This provides for a much larger playing field than the free license limitation of 500MB/day. Ensure your company email address is on your Splunk.com account when requesting a developer license here: https://www.splunk.com/en_us/resources/personalized-dev-test-licenses.html  
 
-
-install splunk universal forwarder
-config with Splunk server IP and appropriate ports for data forwarding (default 9997)
-update inputs.conf
-restart SplunkForwarder Service
-
-check index for data
