@@ -80,7 +80,7 @@ source = XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 ```
 10. Restart SplunkForwarder Service
   * Start > Services *(services.msc)*
-  * PowerShell: Restart-Service SplunkForwarder  
+  * PowerShell: `Restart-Service SplunkForwarder`  
 11. Check Splunk `sysmon` index for ingested data
 ```
 index=sysmon
