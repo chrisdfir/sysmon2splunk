@@ -11,8 +11,8 @@ Generating Sysmon events with the SwiftOnSecurity configuration and ingesting/no
 * [Splunk.com](https://www.splunk.com) Account
 * Splunk Universal Forwarder
 * Splunk   *(Note: This write-up does not go over Splunk installation. Therefore, having an instance of Splunk stood up is a pre-req.)*
-* Host running Microsoft Windows
-* Sysmon
+* Microsoft Windows Host
+* Microsoft Sysinternals Sysmon
 * SwiftOnSecurity Sysmon Config
 * Text Editor
 
