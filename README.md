@@ -90,3 +90,5 @@ index=sysmon
 *Note: If your organization pays for a Splunk Enterprise license, you may be eligible to request a 50GB/day developer license. This provides for a much larger playing field than the free license limitation of 500MB/day. Ensure your company email address is on your Splunk.com account when requesting a developer license here:   https://www.splunk.com/en_us/resources/personalized-dev-test-licenses.html*
 
 **Updates with Sysmon queries and dashboards to come.**
+
+![visitors](https://visitor-badge.glitch.me/badge?page_id=chrisdfir.sysmon2splunk)
