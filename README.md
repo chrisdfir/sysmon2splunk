@@ -7,10 +7,12 @@ Generating Sysmon events with the SwiftOnSecurity configuration and ingesting/no
 * Push the Sysmon event logs to an index on a remote Splunk virtual machine.
 * Parse all the things.
 
+## Prerequisites
+* Splunk server
+
 ## Requirements
 * [Splunk.com](https://www.splunk.com) Account
 * Splunk Universal Forwarder
-* Splunk   *(Note: This write-up does not go over Splunk installation. Therefore, having an instance of Splunk stood up is a pre-req.)*
 * Microsoft Windows Host
 * Microsoft Sysinternals Sysmon
 * SwiftOnSecurity Sysmon Config
