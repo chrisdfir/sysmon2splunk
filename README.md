@@ -25,7 +25,7 @@ Generating Sysmon events with the SwiftOnSecurity configuration and ingesting/no
 *https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon*
 
 ### SwiftOnSecurity config 
-The Sysmon configuration file from SwiftOnSecurity Sysmon provides high-quality event tracing to support threat hunting, compromise assessments, incident response, etc.  
+The Sysmon configuration file from SwiftOnSecurity provides high-quality event tracing to support threat hunting, compromise assessments, incident response, etc.  
 *https://github.com/SwiftOnSecurity/sysmon-config*
 
 
